@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
 
-class AppTest {
+public class AppTest {
+
     @Test
-    void testApp() {
+    public void testApp() {
         System.out.println("Test successful");
     }
 }
