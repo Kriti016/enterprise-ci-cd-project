@@ -1,9 +1,5 @@
-import org.junit.jupiter.api.Test;
-
-public class AppTest {
-
-    @Test
-    public void testApp() {
-        System.out.println("Test successful");
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello from Jenkins Project!");
     }
 }
