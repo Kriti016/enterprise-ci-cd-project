@@ -1,5 +1,9 @@
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Enterprise CI/CD Project Running!");
+import org.junit.jupiter.api.Test;
+
+public class AppTest {
+
+    @Test
+    public void testApp() {
+        System.out.println("Test successful");
     }
 }
