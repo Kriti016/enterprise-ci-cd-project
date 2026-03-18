@@ -22,6 +22,13 @@ pipeline {
             }
         }
 
+        stage('Security Scan') {
+    steps {
+        echo 'Running Security Scan...'
+        bat 'mvn org.owasp:dependency-check-maven:check'
+    }
+}
+
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
