@@ -9,6 +9,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                echo 'Feature branch update' 
                 echo 'Building...'
                 bat 'mvn clean install'
             }
