@@ -25,7 +25,7 @@ pipeline {
         stage('Security Scan') {
     steps {
         echo 'Running Security Scan...'
-        bat 'mvn org.owasp:dependency-check-maven:check'
+        bat 'mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7'
     }
 }
 
