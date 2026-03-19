@@ -1,3 +1,5 @@
+@Library('my-shared-lib') _
+
 pipeline {
     agent any
 
@@ -9,9 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Feature branch update' 
-                echo 'Building...'
-                bat 'mvn clean install'
+                buildApp()
             }
         }
 
@@ -23,11 +23,11 @@ pipeline {
         }
 
         stage('Security Scan') {
-    steps {
-        echo 'Running Security Scan...'
-        bat 'mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7 -DnvdApiDelay=0 -DskipUpdates=true'
-    }
-}
+            steps {
+                echo 'Running Security Scan...'
+                bat 'mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7 -DskipUpdates=true'
+            }
+        }
 
         stage('Deploy') {
             steps {
