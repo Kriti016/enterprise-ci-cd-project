@@ -16,6 +16,13 @@ pipeline {
             }
         }
 
+        stage('Archive Artifact') {
+    steps {
+        echo 'Archiving build artifact...'
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+    }
+}
+
         stage('Test') {
             steps {
                 echo 'Testing...'
